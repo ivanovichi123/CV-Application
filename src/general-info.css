@@ -1,0 +1,39 @@
+section {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightcyan;
+}
+
+fieldset {
+    max-width: 1000px;
+}
+
+legend {
+    font-size: 1.5rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bolder;
+}
+
+label {
+    display: block;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-top: 1rem;
+}
+
+#section-1 > input {
+    width: 500px;
+}
+
+input:invalid {
+    border: 2px solid red;
+}
+
+input:valid {
+    border: 2px solid green;
+}
+
+span {
+    color: red;
+}

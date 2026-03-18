@@ -1,0 +1,20 @@
+import { useState } from 'react'
+import './general-info.css'
+
+function GeneralInfo() {
+  return (
+        <fieldset id='section-1'>
+          <legend>General information</legend>
+          <label htmlFor="first-name">First name/s:<span>*</span></label>
+          <input type="text" id='first-name' required/>
+          <label htmlFor="last-name">Last name/s:<span>*</span></label>
+          <input type="text" id='last-name' required/>
+          <label htmlFor="email">Email:<span>*</span></label>
+          <input type="email" id='email' required/>
+          <label htmlFor="phone-number">Phone number:<span>*</span></label>
+          <input type="tel" id='phone-number' required/> <br />
+        </fieldset>
+  )
+}
+
+export default GeneralInfo
