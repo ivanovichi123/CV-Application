@@ -8,6 +8,7 @@ section {
 
 fieldset {
     max-width: 1000px;
+    margin-top: 1.5rem;
 }
 
 legend {
@@ -26,14 +27,34 @@ label {
     width: 500px;
 }
 
-input:invalid {
+#section-2 > input {
+    width: 500px;
+}
+
+#section-3 > input {
+    width: 500px;
+}
+
+textarea {
+    width: 500px;
+}
+
+#section-1 > input:invalid {
     border: 2px solid red;
 }
 
-input:valid {
+#section-1 > input:valid {
     border: 2px solid green;
 }
 
 span {
     color: red;
+}
+
+#submit {
+    margin-top: 1rem;
+    border-radius: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: lightblue;
+    font-weight: bolder;
 }
