@@ -1,34 +1,74 @@
-import { useState } from 'react'
-import './general-info.css'
+import { useState } from "react";
+import "./general-info.css";
 
-function GeneralInfo() {
+function GeneralInfo(props) {
   const [firstName, setFirstName] = useState("First name");
   const [lastName, setLastName] = useState("Last name");
   const [email, setEmail] = useState("Email");
   const [phoneNumber, setPhoneNumber] = useState("Phone number");
 
   return (
-        <fieldset id='section-1'>
-          <legend>General information</legend>
-          <label htmlFor="first-name">First name/s:<span>*</span></label>
-          <input type="text" id='first-name' required
-            onChange={(event) => setFirstName(event.target.value)}
+    <section>
+      <fieldset id="section-1" style={{ display: props.formVisible }}>
+        <legend>General information</legend>
+        <label htmlFor="first-name">
+          First name/s:<span>*</span>
+        </label>
+        <input
+          type="text"
+          id="first-name"
+          required
+          onChange={(event) => setFirstName(event.target.value)}
+        />
+        <label htmlFor="last-name">
+          Last name/s:<span>*</span>
+        </label>
+        <input 
+          type="text" 
+          id="last-name" 
+          required 
+          onChange={(event) => setLastName(event.target.value)}
           />
-
-          <label htmlFor="last-name">Last name/s:<span>*</span></label>
-          <input type="text" id='last-name' required
+        <label htmlFor="email">
+          Email:<span>*</span>
+        </label>
+        <input 
+          type="email" 
+          id="email" 
+          required 
+          onChange={(event) => setEmail(event.target.value)}
           />
+        <label htmlFor="phone-number">
+          Phone number:<span>*</span>
+        </label>
+        <input 
+        type="tel" 
+        id="phone-number" 
+        required 
+        onChange={(event) => setPhoneNumber(event.target.value)}
+        /> <br />
+      </fieldset>
 
-          <label htmlFor="email">Email:<span>*</span></label>
-          <input type="email" id='email' required
-          />
-
-          <label htmlFor="phone-number">Phone number:<span>*</span></label>
-          <input type="tel" id='phone-number' required
-          /> <br />
-
-        </fieldset>
-  )
+      <GeneralContent 
+        firstName={firstName} 
+        lastName={lastName}
+        email={email}
+        phoneNumber={phoneNumber}
+        theDisplay={props.infoVisible} 
+      />
+    </section>
+  );
 }
 
-export default GeneralInfo
+function GeneralContent(props) {
+  return (
+    <div style={{ display: props.theDisplay }}>
+      <p>{props.firstName}</p>
+      <p>{props.lastName}</p>
+      <p>{props.email}</p>
+      <p>{props.phoneNumber}</p>
+    </div>
+  );
+}
+
+export { GeneralInfo, GeneralContent };
