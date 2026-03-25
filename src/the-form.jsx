@@ -20,7 +20,7 @@ function TheForm() {
       <form onSubmit={theSubmit}>
         <GeneralInfo formVisible={formVisible ? "" : "none"} infoVisible={formVisible ? "none" : ""} />
         <EducationalExperience formVisible={formVisible ? "" : "none"} infoVisible={formVisible ? "none" : ""} />
-        <PracticalExperience />
+        <PracticalExperience formVisible={formVisible ? "" : "none"} infoVisible={formVisible ? "none" : ""} />
         <button id="submit">Submit</button>
       </form>
       <button id="edit"
@@ -31,9 +31,3 @@ function TheForm() {
 }
 
 export default TheForm;
-
-//Nuevisima idea: GeneralContnet no pasarlo como componente sino que tenerlo aqui como codigo y que reciba como props la informacion,
-// el objetivo debe ser usar props para recibir la infromacion de los states
-
-// Idea: Hacer que the-frm alla un state para display none en cada parte para cuando usceda un submit,
-//y para cada uno de los componentes hacer que tengan otro componente que guardara los datos
