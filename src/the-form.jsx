@@ -1,4 +1,4 @@
-import { GeneralInfo, GeneralContent } from "./general-info";
+import {GeneralInfo} from "./general-info";
 import EducationalExperience from "./educational-exp";
 import PracticalExperience from "./practical-exp";
 import { useState } from "react";
@@ -19,7 +19,7 @@ function TheForm() {
     <main id="mainInfo">
       <form onSubmit={theSubmit}>
         <GeneralInfo formVisible={formVisible ? "" : "none"} infoVisible={formVisible ? "none" : ""} />
-        <EducationalExperience />
+        <EducationalExperience formVisible={formVisible ? "" : "none"} infoVisible={formVisible ? "none" : ""} />
         <PracticalExperience />
         <button id="submit">Submit</button>
       </form>

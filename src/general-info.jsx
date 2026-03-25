@@ -2,10 +2,10 @@ import { useState } from "react";
 import "./general-info.css";
 
 function GeneralInfo(props) {
-  const [firstName, setFirstName] = useState("First name");
-  const [lastName, setLastName] = useState("Last name");
-  const [email, setEmail] = useState("Email");
-  const [phoneNumber, setPhoneNumber] = useState("Phone number");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
 
   return (
     <section>
@@ -71,4 +71,4 @@ function GeneralContent(props) {
   );
 }
 
-export { GeneralInfo, GeneralContent };
+export {GeneralInfo};
