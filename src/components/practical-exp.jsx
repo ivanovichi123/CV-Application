@@ -58,6 +58,14 @@ function PracticalExperience(props) {
 }
 
 function PracticalContent(props) {
+  function pasteDates(start,finish) {
+    if(start === "" && finish === "") {
+      return ""
+    } else {
+      return `${props.dateStart} - ${props.dateFinish}`
+    }
+  }
+
   const answers = [
     { id: 1, title: "Company", info: props.companyName },
     { id: 2, title: "Position", info: props.positionTitle },
@@ -65,7 +73,7 @@ function PracticalContent(props) {
     {
       id: 4,
       title: "Time worked",
-      info: `${props.dateStart} - ${props.dateFinish}`,
+      info: pasteDates(props.dateStart, props.dateFinish),
     },
   ];
 
