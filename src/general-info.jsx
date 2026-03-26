@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./general-info.css";
+import "./content.css";
 
 function GeneralInfo(props) {
   const [firstName, setFirstName] = useState("");
@@ -62,10 +63,13 @@ function GeneralInfo(props) {
 
 function GeneralContent(props) {
   return (
-    <div style={{ display: props.theDisplay }}>
-      <p>{props.firstName}</p>
-      <p>{props.lastName}</p>
-      <p>{props.email}</p>
+    <div className="theContent"   style={{ display: props.theDisplay }}>
+      <h1>Curriculum</h1>
+      <h3>Name: </h3>
+      <p>{props.firstName} {props.lastName}</p> <br />
+      <h3>Email: </h3>
+      <p>{props.email}</p> <br />
+      <h3>Phone number: </h3>
       <p>{props.phoneNumber}</p>
     </div>
   );

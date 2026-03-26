@@ -21,7 +21,12 @@ function TheForm() {
         <GeneralInfo formVisible={formVisible ? "" : "none"} infoVisible={formVisible ? "none" : ""} />
         <EducationalExperience formVisible={formVisible ? "" : "none"} infoVisible={formVisible ? "none" : ""} />
         <PracticalExperience formVisible={formVisible ? "" : "none"} infoVisible={formVisible ? "none" : ""} />
-        <button id="submit">Submit</button>
+        <button 
+          id="submit" 
+          style={{display:formVisible ? "" : "none"}}
+        >
+          Submit
+        </button>
       </form>
       <button id="edit"
         onClick={theEdit}

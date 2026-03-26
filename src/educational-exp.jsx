@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./general-info.css";
+import "./content.css";
 
 function EducationalExperience(props) {
   const [schoolName, setSchoolName] = useState("");
@@ -50,14 +51,43 @@ function EducationalExperience(props) {
 }
 
 function EducationalContent(props) {
+  const answers = [
+    {id: 1, title: "School", info: props.schoolName}, 
+    {id: 2, title: "Degree", info: props.titleStudy}, 
+    {id: 3, title: "Graduated on", info: props.dateStudy}, 
+    {id: 4, title: "Projects", info: props.projects}];
+
+    let count = 0;
+
   return (
-    <div style={{ display:props.theDisplay }}>
-      <p>{props.schoolName}</p>
-      <p>{props.titleStudy}</p>
-      <p>{props.dateStudy}</p>
-      <p>{props.projects}</p>
+    <div className="theContent" style={{ display:props.theDisplay }}>
+
+      {answers.flatMap(answer => {
+        if (answer.info === "") {
+          return [];
+        } 
+        else if (answer.info !== "" && count === 0) {
+          count += 1;
+          return (
+            <div key={answer.id}>
+              <h2>Educational Experience</h2>
+              <h3>{answer.title}: </h3>
+              <p>{answer.info}</p> <br />
+            </div>
+          )
+        }
+        else {
+          return (
+            <div key={answer.id}>
+            <h3>{answer.title}: </h3>
+            <p>{answer.info}</p> <br />
+            </div>
+          )
+        }
+      })}
+      
     </div>
-  )
+  );
 }
 
 export default EducationalExperience;

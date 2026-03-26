@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./general-info.css";
+import "./content.css";
 
 function PracticalExperience(props) {
   const [companyName, setCompanyName] = useState("");
@@ -58,13 +59,40 @@ function PracticalExperience(props) {
 }
 
 function PracticalContent(props) {
+  const answers = [
+    {id: 1, title: "Company", info: props.companyName},
+    {id: 2, title: "Position", info: props.positionTitle},
+    {id: 3, title: "Responsibilities", info: props.mainResponsibilities},
+    {id: 4, title: "Time worked", info: `${props.dateStart} - ${props.dateFinish}`}
+  ]
+
+  let count = 0;
+
   return (
-    <div style={{ display: props.theDisplay}}>
-      <p>{props.companyName}</p>
-      <p>{props.positionTitle}</p>
-      <p>{props.mainResponsibilities}</p>
-      <p>{props.dateStart}</p>
-      <p>{props.dateFinish}</p>
+    <div className="theContent" style={{ display: props.theDisplay}}>
+      {answers.flatMap(answer => {
+        if (answer.info === "") {
+          return [];
+        }
+        else if (answer.info !== "" && count === 0) {
+          count += 1;
+          return (
+            <div key={answer.id}>
+              <h2>Practical Experience</h2>
+              <h3>{answer.title}: </h3>
+              <p>{answer.info}</p> <br />
+            </div>
+          )
+        }
+        else {
+          return (
+            <div key={answer.id}>
+              <h3>{answer.title}: </h3>
+              <p>{answer.info}</p> <br />
+            </div>
+          )
+        }
+      })}
     </div>
   )
 }
